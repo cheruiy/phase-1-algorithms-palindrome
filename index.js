@@ -1,5 +1,24 @@
 function isPalindrome(word) {
   // Write your algorithm here
+  const cleanWord = word.toLowerCase();
+
+  // Initialize pointers to track characters from both ends of the word
+  let left = 0;
+  let right = cleanWord.length - 1;
+
+  // Loop until the pointers meet in the middle
+  while (left < right) {
+    // If characters at the pointers are not equal, return false
+    if (cleanWord[left] !== cleanWord[right]) {
+      return false;
+    }
+    // Move the pointers towards the middle
+    left++;
+    right--;
+  }
+
+  // If the loop completes without returning false, the word is a palindrome
+  return true;
 }
 
 /* 
